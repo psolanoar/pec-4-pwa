@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  position: absolute;
+  right: 1em;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.container {
+  padding-top: 5em;
+}

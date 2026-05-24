@@ -1,0 +1,19 @@
+<div class="row">
+  @for (country of countries; track country.cca3) {
+    <div class="col-12 col-md-12 mb-4">
+      <mat-card
+        [routerLink]="['/country', country.cca3]"
+        class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn"
+      >
+        <mat-card-content>
+          <p>
+            <strong>{{ country.region }}</strong>
+          </p>
+          <p>
+            {{ country.name.common }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+</div>

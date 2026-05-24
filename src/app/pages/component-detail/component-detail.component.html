@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card-title>Country Detail</mat-card-title>
+  <button class="btn btn-outline-secondary" (click)="back()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  @if (country(); as country) {
+    <div class="col-md-9">
+      <mat-card
+        class="list-group-item list-group-item-action animate__animated animate__fadeIn"
+      >
+        <mat-card-content>
+          <p><strong>Name: </strong>{{ country.name.common }}</p>
+        </mat-card-content>
+        <img mat-card-image [src]="country.flags.png" />
+      </mat-card>
+      @if (showDetails) {
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header
+              ><mat-panel-title
+                >Show more details</mat-panel-title
+              ></mat-expansion-panel-header
+            >
+            <p><strong>Region: </strong>{{ country.region }}</p>
+            <p><strong>Capital: </strong>{{ country.capital }}</p>
+            <p><strong>Area: </strong>{{ country.area }}</p>
+            <p><strong>Continents: </strong>{{ country.continents }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      }
+    </div>
+  }
+</div>

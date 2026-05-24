@@ -1,0 +1,13 @@
+@if (country; as country) {
+  <mat-card
+    [routerLink]="['/country', country.cca3]"
+    class="animate__animated animate__bounce animate__fadeIn"
+  >
+    <mat-card-content>
+      <p>
+        <strong>{{ country.name.common }}</strong>
+      </p>
+      <p>{{ country.region }}</p>
+    </mat-card-content>
+  </mat-card>
+}

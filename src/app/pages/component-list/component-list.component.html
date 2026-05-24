@@ -1,0 +1,32 @@
+<div class="container">
+  @if (isLoading) {
+    <div class="spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  } @else {
+    <div class="buttons">
+      <button class="btn btn-outline-secondary" (click)="view = 'cards'">
+        <mat-icon>grid_view</mat-icon>
+      </button>
+      <button class="btn btn-outline-secondary" (click)="view = 'table'">
+        <mat-icon>table_rows</mat-icon>
+      </button>
+    </div>
+    @if (view === "cards") {
+      <mat-card-title>Country Table</mat-card-title>
+      <div class="row">
+        @for (country of countries(); track country.cca3) {
+          <div class="col-12 col-md-6 mb-4">
+            <app-card [country]="country"></app-card>
+          </div>
+        }
+      </div>
+    }
+    @if (view === "table") {
+      <div class="row">
+        <mat-card-title>Country List</mat-card-title>
+        <app-grid [countries]="countries()"></app-grid>
+      </div>
+    }
+  }
+</div>
