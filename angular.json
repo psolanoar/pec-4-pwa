@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/pec-4-pwa/",
               "budgets": [
                 {
                   "type": "initial",
